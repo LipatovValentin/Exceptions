@@ -71,22 +71,22 @@ namespace Exceptions
         {
             get
             {
-                return _amount;
+                return this._amount;
             }
             set
             {
-                _amount = value;
+                this._amount = value;
             }
         }
         public decimal Balance
         {
             get
             {
-                return _balance;
+                return this._balance;
             }
             set
             {
-                _balance = value;
+                this._balance = value;
             }
         }
         public NotEnoughMoneyInAccountException()
