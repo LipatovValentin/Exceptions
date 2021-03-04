@@ -73,10 +73,6 @@ namespace Exceptions
             {
                 return this._amount;
             }
-            set
-            {
-                this._amount = value;
-            }
         }
         public decimal Balance
         {
@@ -84,27 +80,21 @@ namespace Exceptions
             {
                 return this._balance;
             }
-            set
-            {
-                this._balance = value;
-            }
         }
-        public NotEnoughMoneyInAccountException()
+        public NotEnoughMoneyInAccountException(decimal amount, decimal balance)
         {
-
-        }
-        public NotEnoughMoneyInAccountException(string message) : base(message)
-        {
-
+            this.Amount = amount;
+            this.Balance = balance;
         }
         public NotEnoughMoneyInAccountException(string message, decimal amount, decimal balance) : base(message)
         {
             this.Amount = amount;
             this.Balance = balance;
         }
-        public NotEnoughMoneyInAccountException(string message, Exception inner) : base(message, inner)
+        public NotEnoughMoneyInAccountException(string message, decimal amount, decimal balance, Exception inner) : base(message, inner)
         {
-
+            this.Amount = amount;
+            this.Balance = balance;
         }
         protected NotEnoughMoneyInAccountException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
